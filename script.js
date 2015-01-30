@@ -7,10 +7,21 @@ someApp.config(function ($routeProvider) {
       templateUrl: 'pages/home.html',
       controller : 'mainController'
     })
+
+    .when('/about', {
+      templateUrl: 'pages/about.html',
+      controller : 'aboutController'
+    })
+
+    .when('/clarity', {
+      templateUrl: 'pages/clarity.html',
+      controller : 'clarityController'
+    })
 });
 
-// create the controller and inject Angular's $scope
-someApp.controller('mainController', function($scope) {
-  console
-  $scope.message = 'This is an awesome app!';
-});
+window.onload = function(){
+	var mc = new Hammer(document.getElementById('hammer-pad'));
+	mc.on('pan', function(){
+		alert('You can\'t touch this');
+	});
+};

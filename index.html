@@ -9,9 +9,24 @@
 
     <!-- SPELLS -->
     <!-- load angular and angular route via CDN -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/hammer.js/hammer.js"></script>
     <script src="script.js"></script>
+    <script src="controllers/mainController.js"></script>
+    <script src="controllers/aboutController.js"></script>
+
+    <style>
+    #hammer-pad{
+      height: 500px;
+      background-color : black;
+    }
+    #header{
+     background-color: white;
+     padding-left: 10px;
+    }
+    </style>
+
   </head>
   <body>
 
@@ -19,12 +34,14 @@
     <header>
       <nav class="navbar navbar-default">
         <div class="container">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="/">Angular Routing Example</a>
+          <div class="navbar-header" id="header">
+            <a class="navbar-brand" href="/">This is Lab 4!</a>
           </div>
 
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="#/about"><i class="fa fa-home"></i> About</a></li>
+            <li><a href="#/clarity"><i class="fa fa-home"></i> Clarity</a></li>
           </ul>
         </div>
       </nav>
@@ -38,6 +55,6 @@
       <div ng-view></div>
 
     </div>
-
+    <div id="hammer-pad"></div>
   </body>
 </html>
